@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Page not found</title>
+  <script type="text/javascript">
+    // Reindirizza alla root di GitHub Pages con hash mode
+    // per preservare il routing di Vue
+    const redirectToIndex = () => {
+      const pathname = window.location.pathname;
+      const origin = window.location.origin;
+      window.location.replace(`${origin}/#${pathname}`);
+    };
+    // Esegui il reindirizzamento solo se non siamo già in hash mode
+    if (window.location.pathname !== '/' && !window.location.hash) {
+      redirectToIndex();
+    }
+  </script>
+</head>
+<body>
+<h1>Page not found</h1>
+<p>Redirecting...</p>
+</body>
+</html>
